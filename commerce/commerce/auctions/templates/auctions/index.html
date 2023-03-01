@@ -1,0 +1,50 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    {% if user.is_authenticated %}
+    
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Options
+              </button>
+            <div class="dropdown-menu" id="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'listing' %}">Create listing</a>
+                <a class="dropdown-item">Bid for items</a>
+                <a class="dropdown-item" href="{% url 'watchlist' %}">Watchlist</a>
+            </div> 
+        </div>
+            <span><a href="{% url 'listing' %}">Create listing</a></span>
+            <span><a href="{% url 'messages' %}">Messages</a></span>
+            <span><a href="{% url 'watchlist' %}">Watchlist</a></span>
+        
+    </div>
+    
+            
+            {% for listing in user_listing %}
+            {% if listing.image %}
+            <a href="{% url 'active_listing' listing.id %}">
+                <div class="div">
+                   <img src="{{ listing.image.url }}" alt="Lights">
+                   <div class="inline">
+                    <h2> {{ listing.item }} </h2>
+                    <h3> Listed by {{ listing.name.username }} at £{{ listing.cost }}</h3>
+                   </div>
+                </div>
+            </a>
+            {% endif %}
+                   
+                    
+            </div>
+                {% endfor %}    
+            {% elif not user %}
+
+        <hi>No Listing </hi>
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+            You are not logged in. Login first.
+        </div>
+    {% endif %}
+   
+{% endblock %}

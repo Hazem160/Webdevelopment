@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+    <ul>
+        {% for item in watchlist %}
+        {{ item.errors }}
+        
+        <li> {{ item.listing.item }}</li>
+        
+        {% endfor %}
+    </ul>
+{% endblock %}

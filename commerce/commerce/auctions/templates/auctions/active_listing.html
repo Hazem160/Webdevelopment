@@ -1,0 +1,66 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2> Name of item: {{ listing.item }} </h2>
+
+        
+            <form action="{% url 'active_listing' listing.id %}" method="post">
+                {% csrf_token %}
+                <div class="div">
+                    <div class="inline">
+                        <img style="float:left" src="{{ listing.image.url }}" alt="Lights">
+                    </div>
+                    
+                    <div class="inline">
+                        <h2> {{ listing.item }} </h2>
+                        <h3> Listed by {{ listing.name.username }} at £{{ listing.cost }}</h3>
+                        {% if not state %}
+                        <input type="hidden" name="in_Watchlist" value="True">
+                        <input class="btn btn-primary" type="submit" value="Add to watchlist">
+                        {% elif state %}
+                        <input type="hidden" name="in_Watchlist" value="False">
+                        <input class="btn btn-primary red margin" type="submit" value="Remove from watchlist">
+                    </form>
+                        {% endif %}
+                    </div>
+                    {% if listing.name == user %}
+                        <form action="{% url 'active_listing' listing.id %}" method="post">
+                            <input type="hidden" name="state" value= "True">
+                            <input class="btn btn-primary red margin" type="submit" value="Delete auction listing">
+                        </form>
+                    {% endif %}
+                                {% if highest_bidd %}
+                        <p> Current bid for this item: {{ highest_bidd.offer__max }}</p>
+                                {% else %} 
+                        <p> No bid for this item</p>
+                                {% endif %}
+                        
+                            {% if listing.name != user %}
+                            <form action="{% url 'active_listing' listing.id %}" method="post">
+                                {% csrf_token %}
+                            <div class="form-group width">
+                                <input class="form-control" name="bidd" type="number">
+                            </div>
+                                <input class="btn btn-primary" type="submit" value="Bidd">
+                            </form>
+                </div>
+                                    {% endif %}
+            
+            <form action="{% url 'active_listing' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ comment_input }}
+                <input class="btn btn-primary margin" type="submit" value="Submit">
+            </form>
+            
+            {% if comments %}
+                    {% for comment in comments %}
+                    <div class="div">
+                        <label>{{ user.username }}</label>
+                        <br>
+                        {{ comment.comments }}
+                    </div>
+                        
+                    {% endfor %}
+                {% endif %}
+            
+{% endblock %}
