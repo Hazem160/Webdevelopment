@@ -1,0 +1,23 @@
+textarea {
+    min-height: 400px;
+}
+.div {
+    background-color: rgb(128, 128, 128,0.40);
+    margin: 20px;
+    border: 2px outset rgb(184, 175, 175)
+}
+.span {
+    float: right;
+    opacity: 0.4;
+    font-size: 19px;
+}
+.color {
+    color: black;
+    background-color: rgb(243, 241, 241);
+}
+.margin {
+    margin: 20px;
+    padding: 10px;
+
+}
+
