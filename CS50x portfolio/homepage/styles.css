@@ -1,0 +1,107 @@
+/* this is for every webpage*/
+body
+{
+    margin: 20px;
+    background-color: white;
+    font-size: 16px;
+    line-height:26px;
+    border-radius: 100px;
+    border-color: yellow;
+    background-image: linear-gradient(orange, yellow);
+
+}
+.homepage
+{
+    border: outset orange;
+    text-align: center;
+    margin: 10px 10px;
+
+}
+
+
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+span
+{
+    display: block;
+}
+
+img
+{
+    width: 750px;
+    height: 550px;
+    border-style: ridge;
+
+}
+/* this is for index.html*/
+
+#title
+    {
+        border: 2px outset yellow;
+        border-radius: 25px;
+        padding-right: 10px;
+
+        max-width: 800px;
+        text-align: center;
+        font: 40px "Times New Roman", serif;
+
+    }
+   #main1
+   {
+    padding:20px;
+    border:10px outset yellow;
+
+   }
+
+    .step
+    {
+        font: 15px;
+        font-weight: bold;
+        color: black;
+
+    }
+
+    #dropbox
+    {
+        position: absolute;
+        top:120px;
+        right:50px;
+        text-align: right;
+        border-style: groove;
+        padding: 10px;
+        border:red;
+
+
+
+    }
+#dropbox > li
+{
+    border-bottom: 2px outset yellow;
+}
+
+/* this is for page1 html file */
+    header
+    {
+        margin: 30px;
+        color: black;
+        text-align: center;
+
+        font: 30px "Times New Roman", serif;
+    }
+    main
+    {
+
+        margin: 20px;
+        color: black;
+        font-size: medium;
+    }
+
+    #table1
+    {
+        margin: 50px;
+    }
+

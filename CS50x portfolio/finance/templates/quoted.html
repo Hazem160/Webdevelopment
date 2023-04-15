@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- table head values are hard-coded-->
+                <th> name </th>
+                <th> price</th>
+                <th> symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{ quote["name"] }}</td>
+                <td> {{ quote["price"] }}</td>
+                <td> {{ quote["symbol"] }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

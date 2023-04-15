@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table class="table">
+    <thead >
+        <tr>
+            <!--Table head values are hardcoded-->
+            <th> Name of stock</td>
+            <th> Price per stock </td>
+            <th> N° of shares</td>
+            <th> Total value</td>
+            <th> Cash </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for share in display_shares %}
+        <tr>
+            <td> {{ share["name_stock"] }}</td>
+            <td> {{ share["price"] }}</td>
+            <td> {{ share["number"] }}</td>
+            <td> {{ share["number"] * share["price"] }} </td>
+            <td> {{ share["cash"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div>
+    <a href="/quote"> Quote</a>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead >
+        <tr>
+            <!--Table head values are hardcoded-->
+            <th> Symbol</td>
+            <th> Name</td>
+            <th> Shares</td>
+            <th> Price</td>
+            <th> Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in hist_table %}
+        <tr>
+            <td> {{ data["symbol"] }}</td>
+            <td> {{ data["name"] }}</td>
+            <td> {{ data["number"] }}</td>
+            <td> {{ data["price"]}} </td>
+            <td> {{ data["status"]}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

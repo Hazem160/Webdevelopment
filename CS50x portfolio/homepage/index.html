@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width;">
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <div class="container-fluid" ID="title">
+            Egg world
+        </div>
+        <br>
+        <div ID="main1">
+            <p> In this webpage, I will be explaining to you how to cook an omelette!  Hope you will find it useful.</p>
+            <p class="step"> Step 1</p>
+            <span> Season the beaten eggs well with salt and pepper. Heat the oil and butter in a
+                non-stick frying pan over</span><span> a medium-low heat until the butter has melted and is foaming.</span>
+            <p class="step"> Step 2</p>
+            <span> Pour the eggs into the pan, tilt the pan ever so slightly from one side to another to allow the eggs to swirl</span><span> and cover the surface of the pan completely.
+                Let the mixture cook for about 20 seconds then scrape a line</span><span> through the middle with a spatula.</span>
+            <p class="step"> Step 3</p>
+            <p> Tilt the pan again to allow it to fill back up with the runny egg.
+                Repeat once or twice more until the egg has just set.</p>
+            <p class="step"> Step 4</p>
+            <span> At this point you can fill the omelette with whatever you like-some grated cheese, sliced ham, fresh herbs, sautéed</span><span>mushrooms or smoked salmon all work well.
+                Scatter the filling over the top of the omelette and fold gently in half</span><span> with the spatula. Slide onto a plate to serve.</span>
+            <br>
+            <img src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FSeries%2F2022-07-How-To-Make-an-Omelet-Step-by-Step%2F2022_July_K_EDR_OMELET_31904" alt="omelette">
+        </div>
+        <div>
+            <ul id="dropbox" class="nav flex-column" style= "border: 2px outset yellow" onclick="alerting()" >
+
+                <li class=" nav-items">
+                    <a class=" nav-link text dark" href="page1.html">How to cook boiled eggs</a>
+                <li class=" nav-items">
+                    <a class=" nav-link text dark" href="page2.html">How to cook scrambled eggs</a>
+                </li>
+                <li class=" nav-items">
+                    <a class=" nav-link text dark" href="page3.html">How to cook poached eggs</a>
+                </li>
+                <li class=" nav-items">
+                    <a class=" nav-link text dark" href="page4.html">How to cook scotch eggs</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+
+            function hover_something()
+            {
+                var state= false;
+                if (state==false)
+                {
+                    let div= document.createElement("p");
+                    div.textContent= "These are links to other delicious egg-based recipes!";
+                    const dropbox= document.querySelector("#dropbox");
+                    dropbox.appendChild(div);
+                    state= true;
+                }
+                //let hover= event.srcElement;
+                //document.getElementById("dropbox")
+
+            }
+                function alerting()
+                {
+                    alert("These are links to other delicious egg-based recipes!");
+                }
+
+        </script>
+    </body>
+</html>

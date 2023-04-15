@@ -1,0 +1,1 @@
+SELECT ROUND(AVG(rating),2)f FROM ratings;
